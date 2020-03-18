@@ -17,12 +17,42 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 
+			<?php  
+			$reservation_title = get_field("reservation_title","option");
+			$reservation_link = get_field("reservation_link","option");
+			$order_options = get_field('order_options','option');
+			?>
+			
+			<?php if ($order_options || $reservation_link) { ?>
 			<div class="topmenu">
 				<div class="links">
-					<a href="#" class="green">Reservations</a>
-					<a href="#" class="orange">Order</a>
+					<?php if ($reservation_title && $reservation_link) { ?>
+						<a href="<?php echo $reservation_link ?>" target="_blank" class="green"><?php echo $reservation_title ?></a>
+					<?php } ?>
+					<?php if ($order_options) { ?>
+						<a href="#" id="orderOption" class="orange">Order</a>
+						<div class="order-options">
+							<?php foreach ($order_options as $o) { 
+								$o_link = $o['link'];
+								$o_logo = $o['logo'];  
+								$o_text = $o['text']; ?>
+								<?php if ($o_link && $o_logo) { ?>
+									<div class="orderlink">
+										<a href="<?php echo $o_link ?>" target="_blank">
+											<img src="<?php echo $o_logo['url'] ?>" alt="<?php echo $o['logo']['title'] ?>">
+											<?php if ($o_text) { ?>
+											<span class="text"><?php echo $o_text ?></span>	
+											<?php } ?>
+										</a>
+									</div>
+								<?php } ?>	
+							<?php } ?>
+							<div id="closeOrder" class="closediv clear"><span id="close-order">Close</span></div>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
+			<?php } ?>
 			
 			<div class="inner">
 				<?php if( get_custom_logo() ) { ?>
@@ -34,9 +64,8 @@
 			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
 		            </h1>
 		        <?php } ?>
-
+				<button id="toggleMenu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="sr-only">MENU</span><span class="bar"></span></button>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</div>
