@@ -35,15 +35,16 @@
 					<div class="layer1">
 						<div class="layer2"><div class="top"></div><div class="bottom"></div></div>
 						<div class="flexrow info">
-							<?php foreach ($menus as $m) { ?>
-							<div class="menu-title">
-								<?php if ($m['pdf_link']) { ?>
-								<a href="<?php echo $m['pdf_link'] ?>" target="_blank"><?php echo $m['title'] ?></a>
-								<?php } else { ?>
-									<?php echo $m['title'] ?>
+							<div class="section-title"><span>Menus</span></div>
+							<div class="food-menu-items">
+								<?php foreach ($menus as $m) { 
+								$pagelink = ($m['pdf_link']) ? $m['pdf_link'] : "#";
+								?>
+								<div class="foodMenuName">
+									<a href="<?php echo $pagelink ?>" target="_blank"><span><?php echo $m['title'] ?></span></a>
+								</div>	
 								<?php } ?>
-							</div>	
-							<?php } ?>
+							</div>
 						</div>
 					</div>
 					<div class="corner bottom"><span class="left"></span><span class="right"></span></div>
@@ -52,6 +53,42 @@
 		</div>
 	</section>
 	<?php } ?>
+
+
+	<?php /* CONTACT */ ?>
+	<?php 
+	$square = get_bloginfo("template_url") . "/images/square.png";
+	$phone = get_field("phone","option"); 
+	$address = get_field("address","option"); 
+	$gmap = get_field("gmap","option"); 
+	$contactBg = get_field("contactBg"); 
+	$contactStyle = ($contactBg) ? ' style="background-image:url('.$contactBg['url'].')"':'';
+	?>
+
+	<section class="section-contact cf"<?php echo $contactStyle ?>>
+		<div class="wrapper">
+			<div class="contactinfo">
+				<img src="<?php echo $square ?>" alt="" aria-hidden="true" class="placeholder" />
+				<div class="inside">
+					<div class="wrap">
+						<div class="title">Contact</div>
+						<div class="details">
+							<?php if ($phone) { ?>
+							<div class="info phone"><?php echo $phone ?></div>
+							<?php } ?>
+							<?php if ($address) { ?>
+							<div class="info address"><?php echo $address ?></div>
+							<?php } ?>
+						</div>
+						<?php if ($gmap) { ?>
+							<div class="gmap"><a href="<?php echo $gmap ?>" target="_blank">GET DIRECTIONS</a></div>
+						<?php } ?>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
 
 </div><!-- #primary -->
 <?php

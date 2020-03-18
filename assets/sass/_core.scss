@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "ConcursoItalian";
+  src: url("./fonts/ConcursoItalianBTN.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/ConcursoItalianBTN.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/ConcursoItalianBTN.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/ConcursoItalianBTN.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/ConcursoItalianBTN.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/ConcursoItalianBTN.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/ConcursoItalianBTN.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ConcursoItalian";
+  src: url("./fonts/ConcursoItalianBTNBold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/ConcursoItalianBTNBold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/ConcursoItalianBTNBold.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/ConcursoItalianBTNBold.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/ConcursoItalianBTNBold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/ConcursoItalianBTNBold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/ConcursoItalianBTNBold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	overflow-wrap: normal;
     word-wrap: normal;
@@ -28,7 +54,7 @@ body {
 	font-size: 14px;
 	line-height: 1.4;
 	color: $color_main;
-	background: $body_color;
+	background: $primary;
 }
 .cf:before, .cf:after {
     content: " "; 
@@ -209,7 +235,7 @@ body.home {
 			content:"";
 			display: block;
 			width: 100%;
-			height: 59.7%;
+			height: 465px;
 			background: url("images/pattern.jpg") top center repeat-x;
 			position: absolute;
 			top: 0;
@@ -315,9 +341,9 @@ body.home {
 		&.half {
 			.imagecol {
 				width: 100%;
-				margin-bottom: 20px;
+				margin-bottom: 68px;
 				padding: 30px;
-				@include xs {
+				@include tab {
 					width: 50%;
 					margin-bottom: 0;
 				}
@@ -331,9 +357,11 @@ body.home {
 			.textcol {
 				width: 100%;
 				line-height: 1.7;
-				@include xs {
+				margin-bottom: 60px;
+				@include tab {
 					width: 50%;
 					padding: 0 0 0 5%;
+					margin-bottom: 0;
 				}
 				.inside {
 					text-align: center;
@@ -341,10 +369,13 @@ body.home {
 					&:before, &:after {
 						content:"";
 						display: block;
-						width: 100%;
-						height: 20px;
-						background:url("images/divider.png") top center no-repeat;
-						position: relative;
+						width: 210px;
+    					height: 15px;
+						background:url("images/divider.svg") top center no-repeat;
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+
 					}
 					&:before {
 						top: -40px;
@@ -369,6 +400,7 @@ body.home {
 	float: left;
 	color: #FFF;
 	position: relative;
+	z-index: 20;
 	&:before,&:after {
 		content:"";
 		display: block;
@@ -408,6 +440,82 @@ body.home {
 		&:after {
 			bottom: -7px;
 			height: 2px;
+		}
+	}
+	.section-title {
+		font-family: $font_secondary;
+		font-size: 50px;
+		line-height: 1.1;
+		text-transform: uppercase;
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 20px 0;
+		span {
+			display: inline-block;
+			position: relative;
+			&:before, &:after {
+				content:"";
+				display: block;
+				width: 120px;
+				height: 30px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background:url('images/noodle.svg') center no-repeat;
+			}
+			&:before {
+				left: -140px;
+			}
+			&:after {
+				right: -140px;
+			}
+		}
+	}
+	.flexrow.info {
+		padding: 10px 0 25px;
+	}
+	.food-menu-items {
+		width: 100%;
+		@include flexgroup-center();
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+		.foodMenuName {
+			width: 140px;
+			height: 90px;
+			text-align: center;
+    		margin: 10px 12px;
+			background:url("images/shape.svg") center no-repeat;
+			transition: all ease-out .3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+			@include flexgroup-center();
+			@include flexbox-justify(center);
+			@include flexbox-align-items(center);
+			a {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				color: $orange;
+				width: 100%;
+				&:hover {
+					color: $gold;
+					span {
+						color: $gold;
+					}
+				}
+			}
+			span {
+				display: block;
+				text-align: center;
+				font-size: 18px;
+				line-height: 1;
+				text-transform: uppercase;
+				color: $orange;
+				width: 100%;
+				padding: 15px 0;
+			}
 		}
 	}
 }
@@ -565,5 +673,158 @@ body.home {
 	.flexrow.info {
 		position: relative;
 		z-index: 10;
+	}
+}
+
+.section-contact {
+	width: 100%;
+	float: left;
+	position: relative;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	&:before {
+		content:"";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $primary;
+		opacity: 0.8;
+	}
+	.wrapper {
+		position: relative;
+		z-index: 10;
+	}
+	.contactinfo {
+		max-width: 400px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		background: url("images/round-shape.svg") center no-repeat;
+		img.placeholder {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.inside {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		@include flexgroup-center();
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+		text-align: center;
+	}
+	.title {
+		font-family: $font_secondary;
+		font-size: 60px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: $color_main;
+		margin-bottom: 5px;
+	}
+	.details {
+		position: relative;
+		&:before,&:after {
+			content:"";
+			display: block;
+			width: 135px;
+			height: 20px;
+			margin: 0 auto;
+			position: relative;
+			background: url("images/curl.svg") center no-repeat;
+		}
+		&:before {
+			top: -6px;
+		}
+		&:after {
+			bottom: -6px;
+		}
+		.info {
+			font-family: $font2;
+			font-size: 18px;
+			text-transform: uppercase;
+			padding: 4px 0;
+		}
+	}
+	.gmap {
+		margin-top: 15px;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			position: relative;
+			font-size: 14px;
+			line-height: 1;
+			padding: 5px 8px;
+			color: $color_main;
+			border: 1px solid $color_main;
+			&:hover {
+				background: $gold;
+				border-color: $gold;
+				color: #FFF;
+			}
+		}
+	}
+}
+
+/* Footer */
+.site-footer {
+	width: 100%;
+	float: left;
+	position: relative;
+	background: #231f20;
+	color: $primary;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	.social-media-col {
+		text-align: center;
+		.vertical-middle {
+			display: inline-block;
+			border-bottom: 1px solid $gold;
+			padding-bottom: 15px;
+			padding-left: 40px;
+			padding-right: 40px;
+			margin-bottom: 5px;
+		}
+		.span1 {
+			letter-spacing: 1px;
+			padding-right: 10px;
+		}
+		.span2 a {
+			display: inline-block;
+			text-decoration: none;
+			color: $primary;
+			margin: 2px 5px;
+			font-size: 20px;
+			&:hover {
+				color: #FFF;
+			}
+		}
+	}
+	.footer-text {
+		margin-top: 15px;
+		margin-bottom: 25px;
+	}
+	.section-partners {
+		.flexrow {
+			@include flexgroup-center();
+			@include flexbox-justify(center);
+			@include flexbox-align-items(center);
+		}
+		.info {
+			padding: 10px 30px;
+			img {
+				width: auto;
+				height: 70px;
+			}
+		}
 	}
 }
