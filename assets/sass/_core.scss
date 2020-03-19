@@ -1304,6 +1304,19 @@ body.subpage.page-template-page-menu {
 	}
 }
 
+/* Page404 */
+.page404 {
+	p {
+		font-size: 18px;
+	}
+	.sitemapMenu {
+		text-align: center;
+		ul {
+			display: inline-block;
+			text-align: left;
+		}
+	}
+}
 /* Footer */
 .site-footer {
 	width: 100%;

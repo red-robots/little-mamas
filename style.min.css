@@ -904,6 +904,9 @@ body.subpage.page-template-page-menu .page-food-menu .type:hover .menu-name span
 #content .gform_wrapper .gform_footer{margin-top:10px;text-align:center}
 #content .gform_wrapper .gform_footer input.button{background:#e23e26;color:#FFF;border:0;border-radius:0;-webkit-appearance:none;margin:0;padding:14px 30px;font-size:20px;line-height:1}
 #content .gform_wrapper .gform_footer input.button:hover{background:#b5321e}
+.page404 p{font-size:18px}
+.page404 .sitemapMenu{text-align:center}
+.page404 .sitemapMenu ul{display:inline-block;text-align:left}
 .site-footer{width:100%;float:left;position:relative;background:#231f20;color:#f8edd6;padding-top:40px;padding-bottom:40px}
 .site-footer .social-media-col{text-align:center}
 .site-footer .social-media-col .vertical-middle{display:inline-block;border-bottom:1px solid #b89c46;padding-bottom:15px;padding-left:40px;padding-right:40px;margin-bottom:5px}
