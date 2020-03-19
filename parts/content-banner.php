@@ -25,6 +25,12 @@ if( is_front_page() ) {
 						<?php } ?>
 					<?php } ?>
 				</div>
+
+				<?php if ($count>1) { ?>
+				    <div class="swiper-pagination"></div>
+				    <div class="swiper-button-next"></div>
+				    <div class="swiper-button-prev"></div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

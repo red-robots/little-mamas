@@ -528,6 +528,38 @@ body.nobanner {
 			clip-path: polygon(95% 0%, 7% 0%, 0% 5%, 0% 95%, 7% 100%, 95% 100%, 100% 93%, 100% 7%);
 		}
 	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
+		&:after {
+			color: #FFF;
+			font-size: 40px;
+			text-shadow: 0 2px 4px rgba(0,0,0,0.65);
+		}
+	}
+	.swiper-button-next {
+		right: 3%;
+	}
+	.swiper-button-prev {
+		left: 3%;
+	}
+	.swiper-pagination {
+		bottom: 20px;
+	}
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: #FFF;
+		opacity: 0.45;
+		&.swiper-pagination-bullet-active {
+			opacity: 1;
+		}
+	}
+	.swiper-slide-active {
+		.slideInside {
+			animation-name: fadeInLeft;
+		}
+	}
 }
 body.subpage {
 	.slidesWrapper {
