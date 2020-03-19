@@ -14,15 +14,20 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area default">
-		<main id="main" class="site-main wrapper" role="main">
+	<div id="primary" class="content-area subpage">
+		<main id="main" data-id="<?php the_ID(); ?>" class="site-main wrapper" role="main">
 
-			<?php while ( have_posts() ) : the_post();
-
-				get_template_part( 'parts/content', 'page' );
-
-			endwhile; // End of the loop.
-			?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php $custom_title = get_field("custom_page_title"); ?>
+				<header class="pageheader">
+					<h1 class="entry-title"><?php echo ($custom_title) ? $custom_title:get_the_title(); ?></h1>
+				</header>
+				<div class="entry-content text-center">
+					<div class="midwrap">
+						<?php the_content(); ?>
+					</div>
+				</div>
+			<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

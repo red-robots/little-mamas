@@ -25,14 +25,7 @@
 		$hours = get_field('hours','option');
 	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php if ($reservation_title && $reservation_link) { ?>
-		<div class="foottop clear">
-			<div class="wrapper text-center">
-				<a class="fbtn" href="<?php echo $reservation_link ?>" target="_blank"><span class="mr-calendar"></span><?php echo $reservation_title ?></a>
-			</div>
-		</div>
-		<?php } ?>
-
+		
 		<div class="footbottom clear">
 			<div class="wrapper">
 

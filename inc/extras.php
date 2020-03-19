@@ -164,6 +164,12 @@ function get_social_links() {
     return $social;
 }
 
+function has_banner() {
+    $banners = get_field("banners");
+    $banner = get_field("banner");
+    return ($banners || $banner) ? true : false;
+}
+
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
         'page_title'    => 'Food Menu',

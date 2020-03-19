@@ -40,6 +40,22 @@ jQuery(document).ready(function ($) {
     	$("#orderOption").trigger('click');
     });
 
+    /* Resize Height of Top Noise Bakground */
+    resize_topbg();
+    $(window).on("resize",function(){
+    	resize_topbg();
+    });
+    function resize_topbg() {
+    	var frameH = $("img.frame").height();
+    	var divHelper = $(".bghelper").height();
+	    var siteHead = $("#masthead").height();
+	    var totalHeight = divHelper + siteHead;
+	    if(totalHeight > siteHead) {
+	    	$(".topbg").css("height",totalHeight+"px");
+	    }
+	    
+    }
+
 	/*
 	*
 	*	Wow Animation

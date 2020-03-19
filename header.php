@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php $custom_class = (has_banner()) ? 'hasbanner':'nobanner'; ?>
+<body <?php body_class($custom_class); ?>>
 <div id="page" class="site cf">
+	<div class="topbg"></div>
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 
