@@ -5,9 +5,18 @@ $frame = get_bloginfo("template_url") . "/images/frame2.png";
 $frame3 = get_bloginfo("template_url") . "/images/frame3.png";
 $frameSmall = get_bloginfo("template_url") . "/images/frame-small.png";
 if( is_front_page() ) { 
-	$banners = get_field("banners"); ?>
-	<?php if ($banners) { 
-	$count = count($banners);
+	$banners = get_field("banners"); 
+	$bannerItems = array();
+	if($banners) {
+		foreach($banners as $b) {
+			if($b['image']) {
+				$bannerItems[] = $b;
+			}
+		}
+	}
+	?>
+	<?php if ($bannerItems) { 
+	$count = count($bannerItems);
 	$slidesId = ($count>1) ? 'slideshow':'static';
 	?>
 	<div class="slidesWrapper cf">
@@ -16,7 +25,7 @@ if( is_front_page() ) {
 			<img src="<?php echo $frame ?>" alt="" aria-hidden="true" class="frame"/>
 			<div class="<?php echo $slidesId ?>" class="swiper-container">
 				<div class="swiper-wrapper">
-					<?php foreach ($banners as $s) { 
+					<?php foreach ($bannerItems as $s) { 
 						$image = $s['image'];?>
 						<?php if ($image) { ?>
 						<div class="swiper-slide">
