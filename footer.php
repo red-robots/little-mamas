@@ -75,6 +75,14 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php if(is_front_page()) { ?>
+<script type="text/javascript">
+	window.onload = function() {
+		$.colorbox({inline:true, href:".ajax"});
+	}
+</script>
+<?php } ?>
+
 <?php wp_footer(); ?>
 
 </body>

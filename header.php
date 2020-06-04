@@ -11,6 +11,34 @@
 </head>
 <?php $custom_class = (has_banner()) ? 'hasbanner':'nobanner'; ?>
 <body <?php body_class($custom_class); ?>>
+<?php
+	$on = get_field('turn_on', 'option');
+	$graphic = get_field('popup_graphic', 'option');
+	$link = get_field('popup_link', 'option');
+	// echo '<pre>';
+	// print_r($graphic);
+	// echo '</pre>';
+?>
+<?php if( $on[0] == 'yes' && is_front_page() ) : ?>
+	<div style='display:none'>
+		<div id='inline_content' class="ajax popup">
+			<?php if( $link ) { ?><a href="<?php echo $link; ?>" target="_blank"><?php } ?>
+				<img src="<?php echo $graphic['sizes']['medium_large']; ?>">
+			<?php if( $link ) { ?></a><?php } ?>
+		</div>
+	</div>
+<?php endif; ?>
+<div style='display:none'>
+			<div id='inline_content' style='padding:10px; background:#fff;'>
+			<p><strong>This content comes from a hidden element on this page.</strong></p>
+			<p>The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.</p>
+			<p><a id="click" href="#" style='padding:5px; background:#ccc;'>Click me, it will be preserved!</a></p>
+			
+			<p><strong>If you try to open a new Colorbox while it is already open, it will update itself with the new content.</strong></p>
+			<p>Updating Content Example:<br />
+			<a class="ajax" href="../content/ajax.html">Click here to load new content</a></p>
+			</div>
+		</div>
 <div id="page" class="site cf">
 	<div class="topbg"></div>
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>

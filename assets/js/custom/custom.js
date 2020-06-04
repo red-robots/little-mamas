@@ -24,8 +24,10 @@ jQuery(document).ready(function ($) {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-    });
-    
+	});
+	
+	
+	
 
     /* Order Option */
     $(document).on("click","#orderOption",function(e){
