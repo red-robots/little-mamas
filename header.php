@@ -7,6 +7,13 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Lora:400,400i,700,700i&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<!-- For tracking reservations on the reservations button -->
+<script src="https://widgets.resy.com/embed.js"></script>
+<script>
+	resyWidget.addButton(document.getElementById('resyButton-9PTNB768ZJ'),{
+			"venueId":10695, "apiKey":"4S3Om8mWKxIqSGqSABsH5A9s6u3ZTIPo"
+		})
+</script>
 <?php
 wp_head();
 $analytics = get_field('analytics', 'option');
@@ -59,7 +66,7 @@ if( $analytics ){echo $analytics;}
 			<div class="topmenu">
 				<div class="links">
 					<?php if ($reservation_title && $reservation_link) { ?>
-						<a href="<?php echo $reservation_link ?>" target="_blank" class="green"><?php echo $reservation_title ?></a>
+						<a id="resyButton-9PTNB768ZJ" href="<?php echo $reservation_link ?>" target="_blank" class="green"><?php echo $reservation_title ?></a>
 					<?php } ?>
 					<?php if ($order_options) { ?>
 						<a href="#" id="orderOption" class="orange">Order</a>
