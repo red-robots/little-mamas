@@ -1,12 +1,27 @@
 /**
  *	Custom jQuery Scripts
  *	
- *	Developed by: Austin Crane	
- *	Designed by: Austin Crane
+ *	Developed by: Austin Crane	s
+ *	Designed by: Austin Cranes
  */
 
 jQuery(document).ready(function ($) {
 	
+	
+    var config = {
+    	"venueId":10695, 
+		"apiKey":"4S3Om8mWKxIqSGqSABsH5A9s6u3ZTIPo"
+    }
+    
+	$( "#resyButton-9PTNB768ZJ" ).on( "click", function() {
+		resyWidget.openModal( config );
+		// console.log('asdfa');
+	});
+	// $("#resyButton-9PTNB768ZJ span").removeAttr("style");
+	// $("#resyButton-9PTNB768ZJ span:hover").removeAttr("style");
+	// $("#resyButton-9PTNB768ZJ span").addClass("resybutt");
+
+
 	/* Slideshow */
 	var swiper = new Swiper('.slideshow', {
 		slidesPerView: 1,

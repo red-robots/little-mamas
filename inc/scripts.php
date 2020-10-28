@@ -20,9 +20,15 @@ function bellaworks_scripts() {
 	wp_enqueue_script( 
 			'bellaworks-colorbox', 
 			get_template_directory_uri() . '/assets/js/colorbox.js', 
-			array(), '20120206', 
+			array(), '20120207', 
 			true 
 		);
+	// wp_enqueue_script( 
+	// 		'bellaworks-resy', 
+	// 		get_template_directory_uri() . '/assets/js/custom/resy.js', 
+	// 		array(), '20120206', 
+	// 		false 
+	// 	);
 
 	wp_enqueue_script( 
 			'bellaworks-custom', 
