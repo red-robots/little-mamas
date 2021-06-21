@@ -1398,17 +1398,31 @@ body.subpage.page-template-page-menu {
 		margin-bottom: 25px;
 	}
 	.section-partners {
+		padding: 10px 0 40px 0;
 		.flexrow {
 			@include flexgroup-center();
 			@include flexbox-justify(center);
 			@include flexbox-align-items(center);
 		}
 		.info {
-			padding: 10px 30px;
+			padding: 10px 20px;
 			img {
 				width: auto;
 				height: 70px;
 			}
 		}
+	}
+}
+.siteby {
+	width: 100%;
+	float: left;
+	text-align: center;
+	padding: 30px 0 10px 0;
+	font-size: 12px;
+	color: rgba(#fff, .5);
+
+	a {
+		text-decoration: none;
+		color: rgba(#fff, .7);
 	}
 }

@@ -70,6 +70,7 @@
 				</div>
 				<?php } ?>
 			</div>
+			<div class="siteby">Designed by <a href="https://bellaworksweb.com" target="_blank">BW</a></div>
 		</div>
 
 	</footer><!-- #colophon -->
