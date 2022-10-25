@@ -2052,7 +2052,7 @@ span.resybutt:hover { opacity: .5; }
 
 .main-navigation { width: 100%; }
 
-@media (min-width: 820px) { .main-navigation { width: 70%; position: absolute; right: 0; } }
+@media (min-width: 820px) { .main-navigation { width: 80%; position: absolute; right: 0; } }
 
 .main-navigation .main-menu { display: inline-block; float: right; position: relative; }
 
