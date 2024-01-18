@@ -180,3 +180,44 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
+add_shortcode( 'store_locations', 'store_locations_func' );
+function store_locations_func( $atts ) {
+  $content = '';
+  $store_locations = get_field('store_locations','option');
+  ob_start();
+  if($store_locations) { ?>
+  <div class="store-locations-list">
+  <?php foreach($store_locations as $s) { 
+    $phone = $s['phone'];
+    $address = $s['address'];
+    $gmap = $s['googlemap'];
+    //$reservationLink = $s['reservation_link']; 
+    $is_coming_soon = ($s['coming_soon']=='yes') ? true : false; 
+    if($is_coming_soon) {
+      $reservationLink = "javascript:void(0)";
+    }
+    if($address) { ?>
+    <div class="storeInfo">
+      <?php if($is_coming_soon) { ?>
+      <div class="comingSoon">Coming Soon</div>
+      <?php } ?>
+      <div class="details">
+        <?php if ($phone) { ?>
+        <div class="info phone">TEL: <?php echo $phone ?></div>
+        <?php } ?>
+        <?php if ($address) { ?>
+        <div class="info address"><?php echo $address ?></div>
+        <?php } ?>
+      </div>
+      <?php if ($gmap) { ?>
+      <div class="gmap"><a href="<?php echo $gmap ?>" target="_blank">GET DIRECTIONS</a></div>
+      <?php } ?>
+    </div>
+    <?php } ?>
+  <?php } ?>
+  </div>
+    <?php }
+  $content = ob_get_contents();
+  ob_end_clean();
+  return $content;
+}
