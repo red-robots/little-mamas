@@ -142,6 +142,10 @@ jQuery(document).ready(function($){
     $('.reservationPopUpBox').show();
     $('.reservationPopUpBox').addClass('fadeIn');
   });
+  $('.reservationPopUpBox .store-address a').not('.soon').on('click', function(e){
+    $('.reservationPopUpBox').hide();
+    $('.reservationPopUpBox').removeClass('fadeIn');
+  });
 });
 </script>
 <?php wp_footer(); ?>
