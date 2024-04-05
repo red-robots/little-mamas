@@ -292,8 +292,49 @@ span.resybutt {
 		padding: 0 0;
 		list-style: none;
 	}
+	ul.sub-menu {
+		
+		overflow: hidden;
+		// width: 100%;
+		flex-direction: column;
+		
+		transition: all ease .4s;
+		margin: 0;
+		@include tab {
+			height: 0;
+			// width: auto;
+			position: absolute;
+			top: 100%;
+		}
+		// -webkit-box-shadow: 0px 2px 28px 6px rgba(255,255,255,0.96); 
+		// box-shadow: 0px 2px 28px 6px rgba(255,255,255,0.96);
+		li {
+			display: block;
+			width: 100%;
+			min-width: 200px;
+			margin: 0;
+			
+			@include tab {
+				text-align: left;
+			}
+			a {
+				padding: 10px 25px;
+				&:hover {
+					// -webkit-box-shadow: 0px 2px 28px 6px rgba(255,255,255,0); 
+					// box-shadow: 0px 2px 28px 6px rgba(255,255,255,0);
+				}
+			}
+		}
+	}
 	li {
 		position: relative;
+		&:hover {
+			ul.sub-menu {
+				height: auto;
+				padding: 20px 0;
+				background-color: #f8edd6;
+			}
+		}
 	}
 	ul.menu a {
 		display: inline-block;

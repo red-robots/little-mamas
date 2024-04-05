@@ -312,7 +312,11 @@ span.resybutt:hover{opacity:.5}
 .main-navigation{width:100%}
 .main-navigation .main-menu{display:inline-block;float:right;position:relative}
 .main-navigation ul{margin:0;padding:0;list-style:none}
+.main-navigation ul.sub-menu{overflow:hidden;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all ease .4s;transition:all ease .4s;margin:0}
+.main-navigation ul.sub-menu li{display:block;width:100%;min-width:200px;margin:0}
+.main-navigation ul.sub-menu li a{padding:10px 25px}
 .main-navigation li{position:relative}
+.main-navigation li:hover ul.sub-menu{height:auto;padding:20px 0;background-color:#f8edd6}
 .main-navigation ul.menu a{display:inline-block;text-decoration:none;position:relative}
 .main-navigation ul.menu{text-align:right}
 .main-navigation ul.menu>li{display:inline-block;text-align:center}
@@ -486,6 +490,8 @@ body.subpage.page-template-page-menu .page-food-menu .type:hover .menu-name span
 }@media(min-width:820px){.logo{width:200px}
 .main-navigation{width:80%;position:absolute;right:0}
 .main-navigation .main-menu{right:-20px;top:15px}
+.main-navigation ul.sub-menu{height:0;position:absolute;top:100%}
+.main-navigation ul.sub-menu li{text-align:left}
 .homecontent .row1.half .imagecol{width:50%;margin-bottom:0}
 .homecontent .row1.half .textcol{width:50%;padding:0 0 0 5%;margin-bottom:0}
 .content-area.subpage{padding-top:80px;padding-bottom:80px}
