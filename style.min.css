@@ -270,7 +270,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 .cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0}
 @font-face{font-family:"ConcursoItalian";src:url("./fonts/ConcursoItalianBTN.eot");src:url("./fonts/ConcursoItalianBTN.eot?#iefix") format("embedded-opentype"),url("./fonts/ConcursoItalianBTN.otf") format("opentype"),url("./fonts/ConcursoItalianBTN.svg") format("svg"),url("./fonts/ConcursoItalianBTN.ttf") format("truetype"),url("./fonts/ConcursoItalianBTN.woff") format("woff"),url("./fonts/ConcursoItalianBTN.woff2") format("woff2");font-weight:normal;font-style:normal}
 @font-face{font-family:"ConcursoItalian";src:url("./fonts/ConcursoItalianBTNBold.eot");src:url("./fonts/ConcursoItalianBTNBold.eot?#iefix") format("embedded-opentype"),url("./fonts/ConcursoItalianBTNBold.otf") format("opentype"),url("./fonts/ConcursoItalianBTNBold.svg") format("svg"),url("./fonts/ConcursoItalianBTNBold.ttf") format("truetype"),url("./fonts/ConcursoItalianBTNBold.woff") format("woff"),url("./fonts/ConcursoItalianBTNBold.woff2") format("woff2");font-weight:600;font-style:normal}
-div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
+div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;hyphens:none;page-break-inside:avoid}
 *{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 pre{font-family:"Courier 10 Pitch",Courier,monospace;font-size:13px;line-height:1.3}
 a{color:#e23e26}
@@ -337,7 +337,7 @@ body.nobanner .topbg{display:none !important}
 .slidesWrapper .swiper-wrapper,.slidesWrapper .swiper-slide{width:100%;height:100%}
 .slidesWrapper .swiper-slide{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
 .slidesWrapper .swiper-slide:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:50;background:url("images/frame2.png");background-position:center;background-size:cover;background-repeat:no-repeat}
-.slidesWrapper .swiper-slide .slide-image{width:100%;height:100%;background-position:center;background-size:cover;background-repeat:no-repeat;-webkit-clip-path:polygon(95% 0,7% 0,0 5%,0 95%,7% 100%,95% 100%,100% 93%,100% 7%);clip-path:polygon(95% 0,7% 0,0 5%,0 95%,7% 100%,95% 100%,100% 93%,100% 7%)}
+.slidesWrapper .swiper-slide .slide-image{width:100%;height:100%;background-position:center;background-size:cover;background-repeat:no-repeat;clip-path:polygon(95% 0,7% 0,0 5%,0 95%,7% 100%,95% 100%,100% 93%,100% 7%)}
 .slidesWrapper .swiper-button-next,.slidesWrapper .swiper-button-prev{display:none}
 .slidesWrapper .swiper-button-next:after,.slidesWrapper .swiper-button-prev:after{color:#FFF;font-size:40px;text-shadow:0 2px 4px rgba(0,0,0,0.65)}
 .slidesWrapper .swiper-button-next{right:3%}
@@ -442,7 +442,7 @@ body.subpage.page-template-page-menu.hasbanner .topbg{height:20.7%}
 body.subpage.page-template-page-menu .site:after{content:"";display:block;width:100%;height:40%;position:absolute;left:0;top:0;background:url("images/menu-pattern.png") bottom center repeat;background-color:#e23e26}
 body.subpage.page-template-page-menu .slidesWrapper{top:1px}
 body.subpage.page-template-page-menu .slidesWrapper .swiper-slide:before{background-image:url("images/frame3.png")}
-body.subpage.page-template-page-menu .slidesWrapper .slide-image{width:100%;height:100%;background-position:center;background-size:cover;background-repeat:no-repeat;-webkit-clip-path:polygon(96% 0,4% 0,0 8%,0 92%,4% 100%,96% 100%,100% 92%,100% 8%);clip-path:polygon(96% 0,4% 0,0 8%,0 92%,4% 100%,96% 100%,100% 92%,100% 8%)}
+body.subpage.page-template-page-menu .slidesWrapper .slide-image{width:100%;height:100%;background-position:center;background-size:cover;background-repeat:no-repeat;clip-path:polygon(96% 0,4% 0,0 8%,0 92%,4% 100%,96% 100%,100% 92%,100% 8%)}
 body.subpage.page-template-page-menu .slidesWrapper .bghelper{height:69.2%}
 body.subpage.page-template-page-menu .slidesWrapper .ftop3{position:absolute;top:0;left:0;width:2px}
 body.subpage.page-template-page-menu .pageheader h1.entry-title{color:#FFF;position:relative}
@@ -485,6 +485,13 @@ body.subpage.page-template-page-menu .page-food-menu .type:hover .menu-name span
 .site-footer .section-partners .info img{width:auto;height:70px}
 .siteby{width:100%;float:left;text-align:center;padding:30px 0 10px 0;font-size:12px;color:rgba(255,255,255,0.5)}
 .siteby a{text-decoration:none;color:rgba(255,255,255,0.7)}
+.reservationPopUpBox{display:none;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:1000;width:400px;padding:20px;background-color:white;border-radius:8px;-webkit-box-shadow:0 5px 15px rgba(0,0,0,0.3);box-shadow:0 5px 15px rgba(0,0,0,0.3);-webkit-animation:fadeIn .3s ease;animation:fadeIn .3s ease}
+.store-address{margin-bottom:10px}
+.store-address a{text-decoration:none}
+.popupClose{position:absolute;top:10px;right:10px;text-decoration:none;font-size:20px;color:#000}
+.popupClose:after{content:'X';font-size:24px;color:#000}
+.popTitle h3{text-align:center;margin-bottom:10px}
+.locationList{max-height:200px;overflow-y:auto}
 @media screen and (min-width:600px){#cboxTitle{position:absolute;top:0;left:0;text-align:left;width:20%;font-weight:bold;color:#fff;padding:8% 2% 8% 2%;line-height:1.3;font-size:20px}
 }@media screen and (max-width:819px) and (min-width:960px){.menu-toggle{display:none}
 }@media(min-width:820px){.logo{width:200px}
