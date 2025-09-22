@@ -25,10 +25,19 @@ get_header(); ?>
 				<section class="page-food-menu cf">
 					<div class="menu-types">
 						<?php foreach ($menus as $m) { 
-						$pagelink = ($m['pdf_link']) ? ' href="'.$m['pdf_link'].'"' : "";
+						
 						$menuImg = $m['image'];
+						$link_or_file = $m['link_or_file'];
+						$link = $m['link'];
 						$style = ($menuImg) ? ' style="background-image:url('.$menuImg['url'].')"':'';
 						$hasImg = ($menuImg) ? 'hasimage':'noimage';
+
+						if( $link_or_file == 'link' ) {
+							$pagelink = ($m['link']) ? ' href="'.$m['link'].'"' : "";
+						} else {
+							$pagelink = ($m['pdf_link']) ? ' href="'.$m['pdf_link'].'"' : "";
+						}
+						
 						?>
 						<a class="type"<?php echo $pagelink ?>>
 							<span class="inside">
