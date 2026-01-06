@@ -1005,6 +1005,14 @@ body.subpage {
 	.wrapper {
 		position: relative;
 		z-index: 10;
+		.flexwrap {
+			@include tab() {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			
+		}
 	}
 	.contactinfo {
 		max-width: 400px;
@@ -1012,6 +1020,9 @@ body.subpage {
 		margin: 0 auto;
 		position: relative;
 		background: url("images/round-shape.svg") center no-repeat;
+		@include tab() {
+			margin: 0 10px;
+		}
 		img.placeholder {
 			width: 100%;
 			height: auto;
@@ -1039,15 +1050,15 @@ body.subpage {
 	}
 	.details {
 		position: relative;
-		&:before,&:after {
-			content:"";
-			display: block;
-			width: 135px;
-			height: 20px;
-			margin: 0 auto;
-			position: relative;
-			background: url("images/curl.svg") center no-repeat;
-		}
+		// &:before,&:after {
+		// 	content:"";
+		// 	display: block;
+		// 	width: 135px;
+		// 	height: 20px;
+		// 	margin: 0 auto;
+		// 	position: relative;
+		// 	background: url("images/curl.svg") center no-repeat;
+		// }
 		&:before {
 			top: -6px;
 		}
@@ -1056,9 +1067,16 @@ body.subpage {
 		}
 		.info {
 			font-family: $font2;
-			font-size: 18px;
+			// font-size: 18px;
+			font-size: 17px;
 			text-transform: uppercase;
 			padding: 4px 0;
+			&.thehours {
+				font-size: 15px;
+			}
+			&.disclaimer {
+				font-size: 12px;
+			}
 		}
 	}
 	.gmap {

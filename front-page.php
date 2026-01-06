@@ -73,6 +73,8 @@
           <?php foreach($store_locations as $s) { 
             $phone = $s['phone'];
             $address = $s['address'];
+            $a_hours = $s['a_hours'];
+            $a_disclaimer = $s['a_disclaimer'];
             $coming_soon = $s['coming_soon'];
             $gmap = $s['googlemap'];
                ?>
@@ -88,6 +90,12 @@
                     <?php } ?>
                     <?php if ($address) { ?>
                     <div class="info address"><?php echo $address ?></div>
+                    <?php } ?>
+                    <?php if ($address) { ?>
+                    <div class="info thehours"><?php echo $a_hours ?></div>
+                    <?php } ?>
+                    <?php if ($address) { ?>
+                    <div class="info disclaimer"><?php echo $a_disclaimer ?></div>
                     <?php } ?>
                   </div>
                   <?php if ($gmap) { ?>

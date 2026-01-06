@@ -422,10 +422,11 @@ body.subpage .bghelper{height:57%}
 .section-contact .inside{width:100%;height:100%;position:absolute;top:0;left:0;z-index:20;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;align-items:center;text-align:center}
 .section-contact .title{font-family:"ConcursoItalian","Helvetica",sans-serif;font-size:60px;line-height:1;text-transform:uppercase;color:#231f20;margin-bottom:5px}
 .section-contact .details{position:relative}
-.section-contact .details:before,.section-contact .details:after{content:"";display:block;width:135px;height:20px;margin:0 auto;position:relative;background:url("images/curl.svg") center no-repeat}
 .section-contact .details:before{top:-6px}
 .section-contact .details:after{bottom:-6px}
-.section-contact .details .info{font-family:"Lora",serif;font-size:18px;text-transform:uppercase;padding:4px 0}
+.section-contact .details .info{font-family:"Lora",serif;font-size:17px;text-transform:uppercase;padding:4px 0}
+.section-contact .details .info.thehours{font-size:15px}
+.section-contact .details .info.disclaimer{font-size:12px}
 .section-contact .gmap{margin-top:15px}
 .section-contact .gmap a{display:inline-block;text-decoration:none;position:relative;font-size:14px;line-height:1;padding:5px 8px;color:#231f20;border:1px solid #231f20}
 .section-contact .gmap a:hover{background:#b89c46;border-color:#b89c46;color:#FFF}
@@ -501,6 +502,8 @@ body.subpage.page-template-page-menu .page-food-menu .type:hover .menu-name span
 .main-navigation ul.sub-menu li{text-align:left}
 .homecontent .row1.half .imagecol{width:50%;margin-bottom:0}
 .homecontent .row1.half .textcol{width:50%;padding:0 0 0 5%;margin-bottom:0}
+.section-contact .wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.section-contact .contactinfo{margin:0 10px}
 .content-area.subpage{padding-top:80px;padding-bottom:80px}
 .content-area.subpage .site-main{padding-top:50px;padding-bottom:60px}
 body.subpage.page-template-page-menu.hasbanner .topbg{height:30.75%}
