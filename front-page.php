@@ -26,7 +26,10 @@
   </main>
 
   <?php /* FOOD MENU */ ?>
-  <?php if( $menus = get_field("menus","option") ) { ?>
+  <?php if( $menus = get_field("menus","option") ) { 
+      // echo '<pre>';
+      // print_r($menus);
+    ?>
   <section class="food-menu cf">
     <div class="inner">
       <div class="wrapper">
@@ -38,7 +41,8 @@
               <div class="section-title"><span>Menus</span></div>
               <div class="food-menu-items">
                 <?php foreach ($menus as $m) { 
-                $pagelink = ($m['pdf_link']) ? $m['pdf_link'] : "#";
+                // $pagelink = ($m['pdf_link']) ? $m['pdf_link'] : "#";
+                  $pagelink = $m['link'];
                 ?>
                 <div class="foodMenuName">
                   <a href="<?php echo $pagelink ?>" target="_blank"><span><?php echo $m['title'] ?></span></a>
